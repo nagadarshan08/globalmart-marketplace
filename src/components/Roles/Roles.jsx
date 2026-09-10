@@ -3,234 +3,182 @@ import {
   ShoppingCart,
   RefreshCw,
   Settings,
-  ArrowRight,
   CheckCircle2,
+  ArrowUpRight,
 } from "lucide-react";
 
 import "./Roles.css";
 
+const roles = [
+  {
+    number: "01",
+    title: "Vendor",
+    tag: "Sell & Grow",
+    icon: Store,
+    description:
+      "Reach more customers by listing products and managing your business through GlobalMart.",
+    features: [
+      "List Products",
+      "Manage Inventory",
+      "Manage Orders",
+    ],
+  },
+  {
+    number: "02",
+    title: "Buyer",
+    tag: "Discover & Buy",
+    icon: ShoppingCart,
+    description:
+      "Discover products from trusted vendors, compare options, place orders, and track deliveries.",
+    features: [
+      "Explore Products",
+      "Place Orders",
+      "Track Delivery",
+    ],
+  },
+  {
+    number: "03",
+    title: "Reseller",
+    tag: "Promote & Earn",
+    icon: RefreshCw,
+    description:
+      "Promote eligible products, connect them with customers, and track your sales through the marketplace.",
+    features: [
+      "Find Products",
+      "Promote Products",
+      "Track Sales",
+    ],
+  },
+  {
+    number: "04",
+    title: "Admin",
+    tag: "Manage & Control",
+    icon: Settings,
+    description:
+      "Manage vendors, listings, users, orders, and marketplace activities from one central platform.",
+    features: [
+      "Approve Vendors",
+      "Moderate Listings",
+      "Manage Platform",
+    ],
+  },
+];
+
 function Roles() {
-  const roles = [
-    {
-      icon: Store,
-      number: "01",
-      title: "Vendor",
-      subtitle: "Sell & Grow",
-      description:
-        "Reach more customers by listing products and managing your business through GlobalMart.",
-      features: [
-        "List Products",
-        "Manage Inventory",
-        "Manage Orders",
-      ],
-    },
-    {
-      icon: ShoppingCart,
-      number: "02",
-      title: "Buyer",
-      subtitle: "Discover & Buy",
-      description:
-        "Discover products from trusted vendors, compare options, place orders, and track deliveries.",
-      features: [
-        "Explore Products",
-        "Place Orders",
-        "Track Delivery",
-      ],
-    },
-    {
-      icon: RefreshCw,
-      number: "03",
-      title: "Reseller",
-      subtitle: "Source & Resell",
-      description:
-        "Source products from vendors and create new business opportunities by reselling them to customers.",
-      features: [
-        "Source Products",
-        "Resell Products",
-        "Grow Business",
-      ],
-    },
-    {
-      icon: Settings,
-      number: "04",
-      title: "Admin",
-      subtitle: "Manage & Protect",
-      description:
-        "Maintain a healthy marketplace by managing users, vendors, products, and platform activity.",
-      features: [
-        "Manage Users",
-        "Verify Vendors",
-        "Monitor Platform",
-      ],
-    },
-  ];
-
   return (
-    <section className="roles-section" id="business">
-
+    <section className="roles" id="roles">
       <div className="roles-container">
 
-        {/* HEADING */}
+        {/* =========================
+            SECTION HEADER
+        ========================== */}
+        <div className="roles-header">
 
-        <div className="roles-heading">
+          <p className="roles-eyebrow">
+            ONE PLATFORM, MULTIPLE ROLES
+          </p>
 
-          <div>
-            <span className="roles-label">
-              ONE PLATFORM, MULTIPLE ROLES
-            </span>
+          <h2 className="roles-title">
+            Built for Every{" "}
+            <span>Marketplace User</span>
+          </h2>
 
-            <h2>
-              Built for Every
-              <span> Marketplace User</span>
-            </h2>
-          </div>
-
-          <p>
-            Every participant gets a focused experience designed
-            around their needs — from selling and buying to managing
-            the entire marketplace.
+          <p className="roles-description">
+            Every participant gets a focused experience designed around
+            their needs — from selling and buying to managing the entire
+            marketplace.
           </p>
 
         </div>
 
 
-        {/* ROLE GRID */}
-
+        {/* =========================
+            ROLE CARDS
+        ========================== */}
         <div className="roles-grid">
 
           {roles.map((role) => {
-
             const Icon = role.icon;
 
             return (
-              <article
+              <div
                 className="role-card"
                 key={role.title}
               >
 
-                {/* CARD TOP */}
+                {/* Card Number */}
+                <span className="role-number">
+                  {role.number}
+                </span>
 
-                <div className="role-card-top">
 
-                  <div className="role-icon">
-                    <Icon size={23} />
-                  </div>
-
-                  <span className="role-number">
-                    {role.number}
-                  </span>
-
+                {/* Icon */}
+                <div className="role-icon">
+                  <Icon
+                    size={21}
+                    strokeWidth={2}
+                  />
                 </div>
 
 
-                {/* TITLE */}
+                {/* Title + Tag */}
+                <h3 className="role-title">
 
-                <div className="role-title">
+                  {role.title}
 
-                  <h3>
-                    {role.title}
-                  </h3>
-
-                  <span>
-                    {role.subtitle}
+                  <span className="role-tag">
+                    {role.tag}
                   </span>
 
-                </div>
+                </h3>
 
 
-                {/* DESCRIPTION */}
-
+                {/* Description */}
                 <p className="role-description">
                   {role.description}
                 </p>
 
 
-                {/* FEATURES */}
-
+                {/* Features */}
                 <div className="role-features">
 
                   {role.features.map((feature) => (
-
-                    <div
+                    <span
                       className="role-feature"
                       key={feature}
                     >
-                      <CheckCircle2 size={14} />
 
-                      <span>
-                        {feature}
-                      </span>
-                    </div>
+                      <CheckCircle2
+                        size={12}
+                      />
 
+                      {feature}
+
+                    </span>
                   ))}
 
                 </div>
 
 
-                {/* LINK */}
-
-                <button className="role-link">
+                {/* Learn More */}
+                <span className="role-learn-more">
 
                   Learn More
 
-                  <ArrowRight size={15} />
+                  <ArrowUpRight
+                    size={14}
+                  />
 
-                </button>
+                </span>
 
-              </article>
+              </div>
             );
           })}
 
         </div>
 
-
-        {/* BOTTOM MESSAGE */}
-
-        <div className="roles-bottom">
-
-          <div className="roles-bottom-icon">
-            <GlobeIcon />
-          </div>
-
-          <div className="roles-bottom-text">
-            <strong>
-              One marketplace. Multiple opportunities.
-            </strong>
-
-            <span>
-              GlobalMart connects every participant through one
-              connected commerce ecosystem.
-            </span>
-          </div>
-
-        </div>
-
       </div>
-
     </section>
-  );
-}
-
-
-/* Small reusable icon */
-
-function GlobeIcon() {
-  return (
-    <svg
-      width="21"
-      height="21"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M2 12h20" />
-      <path d="M12 2a15.3 15.3 0 0 1 0 20" />
-      <path d="M12 2a15.3 15.3 0 0 0 0 20" />
-    </svg>
   );
 }
 

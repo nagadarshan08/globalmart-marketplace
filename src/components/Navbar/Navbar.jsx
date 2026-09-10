@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Globe2,
   Menu,
@@ -11,69 +12,100 @@ import "./Navbar.css";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => {
+  const handleSectionClick = (sectionId) => {
     setMenuOpen(false);
+
+    // If already on homepage, scroll directly
+    if (window.location.pathname === "/") {
+      document.getElementById(sectionId)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      // Go to homepage first
+      window.location.href = `/#${sectionId}`;
+    }
   };
 
   return (
-    <header className="navbar">
+    <nav className="navbar">
       <div className="navbar-container">
 
-        {/* Logo */}
-        <a href="/" className="navbar-logo" onClick={closeMenu}>
+        {/* LOGO */}
+        <Link
+          to="/"
+          className="navbar-logo"
+          onClick={() => setMenuOpen(false)}
+        >
           <div className="logo-icon">
-            <Globe2 size={21} strokeWidth={2.2} />
+            <Globe2 size={22} />
           </div>
 
-          <span>
-            Global<span className="logo-highlight">Mart</span>
-          </span>
-        </a>
+          <span>GlobalMart</span>
+        </Link>
 
+        {/* DESKTOP NAVIGATION */}
+        <div className="navbar-links">
 
-        {/* Desktop Navigation */}
-        <nav className="navbar-links">
-
-          <a href="#explore">
+          <button
+            type="button"
+            className="navbar-link-button"
+            onClick={() => handleSectionClick("explore")}
+          >
             Explore
-          </a>
-
-          <a href="#how-it-works">
-            How It Works
-          </a>
-
-          <a href="#business">
-            For Business
-          </a>
-
-          <a href="#about">
-            About
-          </a>
-
-        </nav>
-
-
-        {/* Desktop Actions */}
-        <div className="navbar-actions">
-
-          <button className="login-button">
-            Log In
           </button>
 
-          <button className="get-started-button">
-            Get Started
-            <ArrowRight size={15} />
+          <button
+            type="button"
+            className="navbar-link-button"
+            onClick={() => handleSectionClick("how-it-works")}
+          >
+            How It Works
+          </button>
+
+          <button
+            type="button"
+            className="navbar-link-button"
+            onClick={() => handleSectionClick("roles")}
+          >
+            For Business
+          </button>
+
+          <button
+            type="button"
+            className="navbar-link-button"
+            onClick={() => handleSectionClick("about")}
+          >
+            About
           </button>
 
         </div>
 
+        {/* DESKTOP ACTIONS */}
+        <div className="navbar-actions">
 
-        {/* Mobile Menu Button */}
+          <Link
+            to="/login"
+            className="nav-login"
+          >
+            Log In
+          </Link>
+
+          <Link
+            to="/register"
+            className="nav-get-started"
+          >
+            Get Started
+            <ArrowRight size={16} />
+          </Link>
+
+        </div>
+
+        {/* MOBILE MENU BUTTON */}
         <button
-          className="mobile-menu-button"
+          type="button"
+          className="mobile-menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
+          aria-label="Toggle menu"
         >
           {menuOpen ? (
             <X size={24} />
@@ -84,47 +116,62 @@ function Navbar() {
 
       </div>
 
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="mobile-menu">
 
-      {/* Mobile Navigation */}
-      <div
-        className={`mobile-menu ${
-          menuOpen ? "mobile-menu-open" : ""
-        }`}
-      >
+          <button
+            type="button"
+            className="mobile-menu-link"
+            onClick={() => handleSectionClick("explore")}
+          >
+            Explore
+          </button>
 
-        <a href="#explore" onClick={closeMenu}>
-          Explore
-        </a>
+          <button
+            type="button"
+            className="mobile-menu-link"
+            onClick={() => handleSectionClick("how-it-works")}
+          >
+            How It Works
+          </button>
 
-        <a href="#how-it-works" onClick={closeMenu}>
-          How It Works
-        </a>
+          <button
+            type="button"
+            className="mobile-menu-link"
+            onClick={() => handleSectionClick("roles")}
+          >
+            For Business
+          </button>
 
-        <a href="#business" onClick={closeMenu}>
-          For Business
-        </a>
+          <button
+            type="button"
+            className="mobile-menu-link"
+            onClick={() => handleSectionClick("about")}
+          >
+            About
+          </button>
 
-        <a href="#about" onClick={closeMenu}>
-          About
-        </a>
-
-
-        <div className="mobile-actions">
-
-          <button className="mobile-login-button">
+          <Link
+            to="/login"
+            className="mobile-login"
+            onClick={() => setMenuOpen(false)}
+          >
             Log In
-          </button>
+          </Link>
 
-          <button className="mobile-get-started-button">
+          <Link
+            to="/register"
+            className="mobile-get-started"
+            onClick={() => setMenuOpen(false)}
+          >
             Get Started
-            <ArrowRight size={15} />
-          </button>
+            <ArrowRight size={16} />
+          </Link>
 
         </div>
-
-      </div>
-
-    </header>
+      )}
+    </nav>
   );
 }
 
