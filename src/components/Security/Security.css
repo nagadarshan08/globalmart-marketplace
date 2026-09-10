@@ -1,0 +1,443 @@
+.security-section {
+  padding: 105px 0;
+  background: #ffffff;
+}
+
+.security-container {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.security-heading {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.security-label {
+  display: inline-block;
+  margin-bottom: 13px;
+
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.security-heading h2 {
+  margin: 0 0 18px;
+
+  color: #111827;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -1.7px;
+}
+
+.security-heading h2 span {
+  display: block;
+  color: #2563eb;
+}
+
+.security-heading p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.security-main {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+/* =========================
+   SECURITY VISUAL
+========================= */
+
+.security-visual {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(59, 130, 246, 0.18),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #eff6ff,
+      #f8fbff
+    );
+
+  border: 1px solid #bfdbfe;
+}
+
+/* Decorative circles */
+
+.security-circle {
+  position: absolute;
+
+  border: 1px solid rgba(37, 99, 235, 0.15);
+
+  border-radius: 50%;
+}
+
+.security-circle-one {
+  width: 330px;
+  height: 330px;
+}
+
+.security-circle-two {
+  width: 220px;
+  height: 220px;
+}
+
+/* Shield */
+
+.security-shield {
+  position: relative;
+  z-index: 2;
+
+  width: 120px;
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 32px;
+
+  background: #ffffff;
+
+  color: #2563eb;
+
+  box-shadow:
+    0 20px 50px rgba(37, 99, 235, 0.16);
+
+  animation: securityFloat 4s ease-in-out infinite;
+}
+
+@keyframes securityFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.security-visual-text {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: 22px;
+
+  text-align: center;
+}
+
+.security-visual-text strong {
+  color: #111827;
+  font-size: 18px;
+}
+
+.security-visual-text span {
+  margin-top: 5px;
+
+  color: #64748b;
+  font-size: 11px;
+}
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+.security-floating {
+  position: absolute;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.security-floating-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.security-floating div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.security-floating span {
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.security-floating strong {
+  color: #1e293b;
+  font-size: 11px;
+}
+
+.security-floating-one {
+  top: 70px;
+  left: 25px;
+}
+
+.security-floating-two {
+  right: 22px;
+  bottom: 70px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.security-features {
+  display: flex;
+  flex-direction: column;
+}
+
+.security-feature {
+  display: grid;
+  grid-template-columns: 30px 48px 1fr;
+
+  gap: 18px;
+
+  padding: 25px 8px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  transition: 0.25s ease;
+}
+
+.security-feature:first-child {
+  border-top: 1px solid #e2e8f0;
+}
+
+.security-feature:hover {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+}
+
+.security-feature-number {
+  padding-top: 5px;
+
+  color: #cbd5e1;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.security-feature-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  transition: 0.25s ease;
+}
+
+.security-feature:hover .security-feature-icon {
+  background: #2563eb;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.security-feature-content h3 {
+  margin: 1px 0 7px;
+
+  color: #111827;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.security-feature-content p {
+  max-width: 480px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* =========================
+   TRUST STRIP
+========================= */
+
+.security-trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 55px;
+  padding: 20px 25px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+
+  background: #f8fbff;
+}
+
+.security-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.security-trust-item svg {
+  color: #2563eb;
+}
+
+.security-trust-divider {
+  width: 1px;
+  height: 22px;
+
+  margin: 0 28px;
+
+  background: #dbeafe;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+  .security-main {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .security-visual {
+    min-height: 440px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .security-section {
+    padding: 75px 0;
+  }
+
+  .security-container {
+    width: min(100% - 32px, 1240px);
+  }
+
+  .security-heading {
+    margin-bottom: 40px;
+  }
+
+  .security-visual {
+    min-height: 410px;
+  }
+
+  .security-floating-one {
+    left: 12px;
+    top: 30px;
+  }
+
+  .security-floating-two {
+    right: 12px;
+    bottom: 30px;
+  }
+
+  .security-feature {
+    grid-template-columns: 25px 42px 1fr;
+    gap: 12px;
+    padding: 20px 2px;
+  }
+
+  .security-feature-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .security-trust-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .security-trust-divider {
+    display: none;
+  }
+}

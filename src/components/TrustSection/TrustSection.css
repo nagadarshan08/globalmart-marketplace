@@ -1,0 +1,440 @@
+/* =================================
+   TRUST SECTION
+================================= */
+
+.trust-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 105px 0;
+
+  background: #f8fbff;
+
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.trust-container {
+  width: min(
+    var(--container-width),
+    calc(100% - 48px)
+  );
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    0.78fr
+    1.22fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.trust-intro {
+  max-width: 470px;
+}
+
+.trust-label {
+  display: inline-block;
+
+  margin-bottom: 17px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.trust-intro h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: clamp(
+    36px,
+    4vw,
+    52px
+  );
+
+  line-height: 1.1;
+
+  letter-spacing: -1.8px;
+
+  font-weight: 800;
+}
+
+.trust-intro h2 span {
+  display: block;
+
+  color: #2563eb;
+}
+
+.trust-intro-text {
+  max-width: 440px;
+
+  margin: 22px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =================================
+   TRUST HIGHLIGHT
+================================= */
+
+.trust-highlight {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 32px;
+
+  padding: 15px 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px rgba(
+      15,
+      23,
+      42,
+      0.05
+    );
+}
+
+.trust-highlight-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #2563eb;
+
+  background: #eff6ff;
+
+  border-radius: 11px;
+}
+
+.trust-highlight-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.trust-highlight-content strong {
+  color: #1e293b;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.trust-highlight-content span {
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+.trust-check {
+  margin-left: auto;
+
+  color: #22c55e;
+}
+
+
+/* =================================
+   TRUST POINTS GRID
+================================= */
+
+.trust-points {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 18px;
+}
+
+
+/* =================================
+   TRUST POINT
+================================= */
+
+.trust-point {
+  position: relative;
+
+  min-height: 215px;
+
+  padding: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 6px 22px rgba(
+      15,
+      23,
+      42,
+      0.035
+    );
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.trust-point:hover {
+  transform: translateY(-5px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 16px 35px rgba(
+      37,
+      99,
+      235,
+      0.09
+    );
+}
+
+
+/* =================================
+   TOP
+================================= */
+
+.trust-point-top {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.trust-point-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #2563eb;
+
+  background: #eff6ff;
+
+  border-radius: 12px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.trust-point:hover .trust-point-icon {
+  background: #dbeafe;
+
+  transform: scale(1.05);
+}
+
+.trust-point-number {
+  color: #cbd5e1;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.trust-point h3 {
+  margin: 20px 0 8px;
+
+  color: #1e293b;
+
+  font-size: 16px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.2px;
+}
+
+.trust-point p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =================================
+   BOTTOM LINE
+================================= */
+
+.trust-point-line {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 18px;
+
+  height: 2px;
+
+  overflow: hidden;
+
+  background: #f1f5f9;
+
+  border-radius: 999px;
+}
+
+.trust-point-line::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 0;
+  height: 100%;
+
+  background: #2563eb;
+
+  transition: width 0.35s ease;
+}
+
+.trust-point:hover
+.trust-point-line::after {
+  width: 35%;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .trust-container {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .trust-intro {
+    max-width: 680px;
+  }
+
+  .trust-intro-text {
+    max-width: 620px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .trust-section {
+    padding: 75px 0;
+  }
+
+  .trust-container {
+    width: calc(100% - 40px);
+
+    gap: 38px;
+  }
+
+  .trust-intro h2 {
+    font-size: 38px;
+
+    letter-spacing: -1.4px;
+  }
+
+  .trust-intro-text {
+    font-size: 14px;
+  }
+
+  .trust-points {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .trust-point {
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .trust-highlight {
+    margin-top: 25px;
+  }
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 420px) {
+
+  .trust-container {
+    width: calc(100% - 32px);
+  }
+
+  .trust-section {
+    padding: 65px 0;
+  }
+
+  .trust-intro h2 {
+    font-size: 34px;
+  }
+
+  .trust-highlight-content span {
+    font-size: 9px;
+  }
+
+}
